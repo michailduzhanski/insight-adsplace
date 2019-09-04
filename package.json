@@ -51,7 +51,7 @@
     "front-end"
   ],
   "scripts": {
-    "start": "INSIGHT_PUBLIC_PATH=public node node_modules/.bin/insight-bitcore-api-ads"
+    "start": "INSIGHT_NETWORK=livenet BITCOIND_USER=YOURUSERNAME BITCOIND_PASS=YOURPASS INSIGHT_PUBLIC_PATH=public INSIGHT_FORCE_RPC_SYNC=1 node node_modules/.bin/insight-bitcore-api-ads"
   },
   "dependencies": {
     "insight-bitcore-api-ads": "git+https://github.com/michailduzhanski/insight-api-adsplace.git"
