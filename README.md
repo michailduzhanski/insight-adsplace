@@ -31,6 +31,16 @@ Check some screenshots and more details at [insight's project homepage](http://i
 
     $ npm start
     
+  Run the main application with forever:
+
+    $ npm install forever
+    $ change the section in package.json: ... "scripts": {
+    "start": "INSIGHT_NETWORK=livenet BITCOIND_USER=$YOUR_USERNAME BITCOIND_PASS=YOURPASSWORD INSIGHT_PUBLIC_PATH=public INSIGHT_FORCE_RPC_SYNC=1 INSIGHT_PUBLIC_PATH=public node node_modules/.bin/insight-bitcore-api-ads"
+  } ...  
+    $ forever start -c "npm start" ./ 
+  
+  (It will be works on 3000 port)
+    
   Then open a browser and go to:
 
     http://localhost:3001
