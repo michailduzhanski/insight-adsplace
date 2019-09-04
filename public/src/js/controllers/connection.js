@@ -2,7 +2,7 @@
 
 angular.module('insight.connection').controller('ConnectionController',
   function($scope, $window, Status, getSocket, PeerSync) {
-
+	console.log("start insight.connection")
     // Set initial values
     $scope.apiOnline = true;
     $scope.serverOnline = true;
@@ -22,17 +22,21 @@ angular.module('insight.connection').controller('ConnectionController',
     $scope.getConnStatus = function() {
       PeerSync.get({},
         function(peer) {
+		  console.log("try work with peer api connection")
+		  console.log(peer)
           $scope.apiOnline = peer.connected;
           $scope.host = peer.host;
           $scope.port = peer.port;
         },
         function() {
+		  console.log(peer)
           $scope.apiOnline = false;
         });
     };
 
     socket.emit('subscribe', 'sync');
     socket.on('status', function(sync) {
+	  console.log(sync)
       $scope.sync = sync;
       $scope.apiOnline = (sync.status !== 'aborted' && sync.status !== 'error');
     });
