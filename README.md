@@ -37,7 +37,7 @@ Check some screenshots and more details at [insight's project homepage](http://i
     $ change the section in package.json: ... "scripts": {
     "start": "INSIGHT_NETWORK=livenet BITCOIND_USER=$YOUR_USERNAME BITCOIND_PASS=YOURPASSWORD INSIGHT_PUBLIC_PATH=public INSIGHT_FORCE_RPC_SYNC=1 INSIGHT_PUBLIC_PATH=public node node_modules/.bin/insight-bitcore-api-ads"} ...  
     $ forever start -c "npm start" ./
-    $ */5 *   * * *   root    /usr/local/bin/forever --sourceDir /PATH_TO_EXPLORER_DIR/insight-adsplace restart -c "npm start" ./ 
+    $ */2 *   * * *   root    sh /PATH_TO_EXPLORER_DIR/restart.sh 
   
   (It will be works on 3000 port)
     
